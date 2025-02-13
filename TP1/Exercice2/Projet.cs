@@ -113,7 +113,7 @@ public class Projet
     }
 
 
-    static void Main(string[] args)
+    /*static void Main(string[] args)
     {
         Projet projet = new Projet(); 
         projet.ajouterProgrammeur(new Programmeur("louah" , "mohamed" , 12));
@@ -121,7 +121,7 @@ public class Projet
         projet.afficherListeProgrammeurs();
         projet.ajouterConsommation(1 , 7 , 4);
         
-    }
+    }*/
 
 
 
