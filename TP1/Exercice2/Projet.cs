@@ -7,7 +7,7 @@ public class Projet
     private int duree;
     private int nbrProgrammeur;
 
-    private List<Programmeur> listesProgrammeurs = new List<Programmeur>();
+    private List<Programmeur> listesProgrammeurs = new List<Programmeur>(); 
     private List<ConsomationCafee> listeConsomationCafees = new List<ConsomationCafee>(); 
 
     
@@ -40,6 +40,21 @@ public class Projet
         }
 
         return null; 
+    }
+
+    public Programmeur findById(int id)
+    {
+        foreach (Programmeur programmeur in listesProgrammeurs)
+        {
+            if (programmeur.getId() == id)
+            {
+                return programmeur;
+                break; 
+            }
+        }
+
+        return null; 
+
     }
     public void supprimerProgrameur(string nomProgrammeur)
     {
@@ -83,8 +98,18 @@ public class Projet
 
     public void ajouterConsommation(int numSemaine , int programmerID , int nbrTasses)
     {
-        listeConsomationCafees.Add(new ConsomationCafee(numSemaine ,programmerID , nbrTasses));
-        Console.WriteLine("consomation ajouté avec succes ");
+        // verifier l'existance de programmer 
+        if (findById(programmerID) != null)
+        {
+            listeConsomationCafees.Add(new ConsomationCafee(numSemaine, programmerID, nbrTasses));
+            Console.WriteLine("consomation ajouté   ");
+        }
+        else
+        {
+            Console.WriteLine("programmeur n'existe pas donc on peut pas ajouté une consomation ");
+        }
+
+        
     }
 
 
@@ -94,6 +119,8 @@ public class Projet
         projet.ajouterProgrammeur(new Programmeur("louah" , "mohamed" , 12));
         projet.ajouterProgrammeur(new Programmeur("benmguirida" , "anas" , 22));
         projet.afficherListeProgrammeurs();
+        projet.ajouterConsommation(1 , 7 , 4);
+        
     }
 
 
