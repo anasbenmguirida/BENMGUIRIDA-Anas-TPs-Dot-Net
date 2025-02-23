@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anas\\Desktop\\Tps-dotnet\\TP1\\TP1.csproj": {}
+    "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anas\\Desktop\\Tps-dotnet\\TP1\\TP1.csproj": {
+    "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anas\\Desktop\\Tps-dotnet\\TP1\\TP1.csproj",
+        "projectUniqueName": "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1.csproj",
         "projectName": "TP1",
-        "projectPath": "C:\\Users\\anas\\Desktop\\Tps-dotnet\\TP1\\TP1.csproj",
+        "projectPath": "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1.csproj",
         "packagesPath": "C:\\Users\\anas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anas\\Desktop\\Tps-dotnet\\TP1\\obj\\",
+        "outputPath": "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anas\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -36,13 +36,19 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
