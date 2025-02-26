@@ -4,6 +4,7 @@ public class Test
 {
     static void Main()
     {
+        
         bool checkCredentidals = false; 
         // 9bl l'acces a l'app on doit verifier l'identifiant et le mot de passe 3 tentatif maximum 
         for (int i = 1; i <= 3; i++)
@@ -67,13 +68,13 @@ public class Test
                     // recherche d'un compte par son numero 
                      Console.WriteLine("veullez saisir le numero de compte : ");
                      string num = Console.ReadLine();
-                    Console.WriteLine(CompteBancaire.chercherCompte(num));
+                    Console.WriteLine(CompteBancaire.chercherCompte(num).ToString());
                     break; 
                 case 4 : 
                     Console.WriteLine("veullez entrer votre numero de compte : ");
                     string numCpt = Console.ReadLine();
                     CompteBancaire.chercherCompte(numCpt);
-                    Console.WriteLine("=================================");
+                    Console.WriteLine("================OPERATION SUR LE COMPTE " + numCpt + " =================");
                     Console.WriteLine("1) Crediter ");
                     Console.WriteLine("2) Debiter ");
                     Console.WriteLine("3) Historique");
@@ -82,6 +83,47 @@ public class Test
                     Console.WriteLine("=====================================");
                     Console.WriteLine("sasisez votre choix  ! ");
                     int choix = int.Parse(Console.ReadLine());
+                    string oprationFile = "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1_5\\Operations.txt";
+                    DateTime date = DateTime.Now;
+                    CompteBancaire compteConcerne =  new CompteBancaire() ; 
+                    compteBancaire= CompteBancaire.chercherCompte(numCpt);
+                    if (compteConcerne != null)
+                    {
+                        switch (choix)
+                        {
+                            case 1:
+
+                                Console.WriteLine(("entrer le montant a verser : "));
+                                var montantVerser = Console.ReadLine();
+                                // convertir en double 
+                                double montantActuel = double.Parse(compteBancaire.getMontant());
+                                double montantVerserNumber = double.Parse(montantVerser);
+                                double solde = montantActuel + montantVerserNumber; 
+                                CompteBancaire.modifierMontant(solde.ToString() , numCpt);
+                                using (StreamWriter sw = File.AppendText(oprationFile))
+                                {
+                                    sw.WriteLine("Credit operation  | " + numCpt + " | " + montantVerser + " | "  + solde + " | "+date.ToString());
+                                    sw.WriteLine("\n");
+
+                                }
+
+                                break;
+                            case 2:
+                                Console.WriteLine(("entrer le montant a retirer : "));
+                                var montantRetirer = Console.ReadLine();
+                                using (StreamWriter sw = File.AppendText(oprationFile))
+                                {
+                                    sw.WriteLine("operation de retraite   | " + numCpt + " | " + montantRetirer +
+                                                 " | " + date.ToString());
+                                    sw.WriteLine("\n");
+
+                                }
+
+                                break;
+
+                        }
+                    }
+
                     break; 
                     
                 default:

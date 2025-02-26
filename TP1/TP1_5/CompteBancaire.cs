@@ -7,6 +7,7 @@ public class CompteBancaire
     private string prenomClient;
     private string montant; 
 
+  public CompteBancaire(){} 
     public CompteBancaire(string numCompte, string nomClient, string prenomClient , string montant)
     {
         this.numCompte = numCompte;
@@ -15,7 +16,7 @@ public class CompteBancaire
         this.montant = montant;
     }
 
-    public static string chercherCompte(string numCompte)
+    public static CompteBancaire chercherCompte(string numCompte)
     {
         string path = "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1_5\\Comptes.txt"; 
         foreach (string line in File.ReadLines(path))
@@ -32,14 +33,47 @@ public class CompteBancaire
             if (numCompte == numeroCompte)
             {
                 CompteBancaire compteBancaire = new CompteBancaire(numCompte, nom, prenom, montant);
-               return numCompte + "-" + nom + " " + prenom +" - " +montant +"dhs" ;
+                return compteBancaire; 
+               
             }
         }
 
-        return "ce compte n'existe pas ! "; 
+        return null; 
     }
-    
-    
+
+    public static void modifierMontant(string montant, string numCompte)
+    {
+        string path = "C:\\Users\\anas\\Desktop\\TPs\\BENMGUIRIDA-Anas-TPs-Dot-Net\\TP1\\TP1_5\\Comptes.txt";
+        List<string> lines = File.ReadAllLines(path).ToList(); // Lire toutes les lignes 
+
+        bool found = false;
+
+        for (int i = 0; i < lines.Count; i++)
+        {
+            string[] fields = lines[i].Split('|');
+            if (fields[0].Trim() == numCompte)
+            {
+                fields[3] = montant; // Modifier le montant (supposons qu'il est à l'index 1)
+                lines[i] = string.Join("|", fields); // Reconstruire la ligne
+                found = true;
+                break;
+            }
+        }
+
+        if (found)
+        {
+            File.WriteAllLines(path, lines); // Réécrire le fichier avec les modifications
+            Console.WriteLine("Montant modifié avec succès !");
+        }
+        else
+        {
+            Console.WriteLine("Compte non trouvé !");
+        }
+
+    }
+
+
+
 
     public string getNumCompte()
     {
@@ -54,6 +88,11 @@ public class CompteBancaire
     public string getPrenomClient()
     {
         return prenomClient; 
+    }
+
+    public string getMontant()
+    {
+        return montant;
     }
 
     public void setNumCompte(string num)
