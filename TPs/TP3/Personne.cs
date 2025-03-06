@@ -4,9 +4,9 @@ namespace TP3;
 
 public class Personne
 {
-    protected string code; 
-    protected string nom;
-    protected string prenom;
+    public string code; 
+    public string nom;
+    public string prenom;
 
     public Personne(string code, string nom, string prenom)
     {

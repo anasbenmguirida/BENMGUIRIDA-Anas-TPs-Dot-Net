@@ -1,7 +1,13 @@
 ﻿namespace TP3;
 
-public class Directeur // singleton 
+public class Directeur : Personnel // singleton 
 {
+    private double prime; 
+    public override double calculerSalire()
+    {
+        return salaire + prime; 
+    }
+
     private static Directeur instance; 
     private Directeur(){}
 
