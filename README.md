@@ -2,11 +2,14 @@
 Ce dépôt contient l'ensemble des travaux pratiques que je suis entrain de réaliser dans le cadre de développement C# .NET.
 
 # Liste des TPs 
+
 Pour le premier TP : 
 
     Exercices completés : TP1_1 et TP1_2 .
 
-    Exercices en cours : TP1_5 (presque finie) 
+    Exercices en cours : TP1_5 (presque finie)
+
+Pour le troisieme TP : fini 
 
 # Instructions d'installation
 
