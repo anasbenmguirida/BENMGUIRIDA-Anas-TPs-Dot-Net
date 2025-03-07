@@ -1,0 +1,15 @@
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\bin\Debug\net9.0\TP2.exe
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\bin\Debug\net9.0\TP2.deps.json
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\bin\Debug\net9.0\TP2.runtimeconfig.json
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\bin\Debug\net9.0\TP2.dll
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\bin\Debug\net9.0\TP2.pdb
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.AssemblyInfoInputs.cache
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.AssemblyInfo.cs
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.csproj.CoreCompileInputs.cache
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.sourcelink.json
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.dll
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\refint\TP2.dll
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.pdb
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\TP2.genruntimeconfig.cache
+C:\Users\anas\Desktop\GINF2-S2-MS1\.NET\TPs-C#\TPs\TP2\obj\Debug\net9.0\ref\TP2.dll

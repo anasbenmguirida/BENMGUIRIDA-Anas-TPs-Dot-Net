@@ -13,4 +13,11 @@ public class Etudiant : Personne
         this.niveau = niveau;
         this.moyenne = moyenne;
     }
+    public double Moyenne { get => moyenne; set => moyenne = value; }
+    public string Niveau { get => niveau; set => niveau = value; }
+
+    public void afficherEtudiant()
+    {
+        Console.WriteLine(code + " "+ nom + " " + prenom + " " + niveau + " "+ moyenne );
+    }
 }
