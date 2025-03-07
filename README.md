@@ -3,13 +3,17 @@ Ce dépôt contient l'ensemble des travaux pratiques que je suis entrain de réa
 
 # Liste des TPs 
 
-Pour le premier TP : 
+Pour le premier TP1 : 
 
     Exercices completés : TP1_1 et TP1_2 .
 
     Exercices en cours : TP1_5 (presque finie)
 
-Pour le troisieme TP : fini 
+
+Pour le deuxieme TP2 : teminé 
+
+Pour le troisieme TP3 : terminé
+
 
 # Instructions d'installation
 
