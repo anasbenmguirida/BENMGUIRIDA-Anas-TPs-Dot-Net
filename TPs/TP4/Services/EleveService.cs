@@ -1,32 +1,72 @@
 ﻿using MySql.Data.MySqlClient;
 using TP4.Config;
 using TP4.Entities;
+using TP4.CRUD;
+
 
 namespace TP4.Services;
 
-public class EleveService
+public class EleveService : ICRUD<Eleve>
 {
     private DatabaseConnection databaseConnection = DatabaseConnection.getInstance();
-    private MySqlConnection db = DatabaseConnection.getConnection(); 
-    
-
-
-    public void getAllEleves()
+    private MySqlConnection db;
+    private MySqlCommand cmd;
+    private MySqlDataReader dataReader; 
+    public EleveService()
     {
-        MySqlCommand cmd = db.CreateCommand();
+        db = DatabaseConnection.getConnection();
+        cmd = db.CreateCommand();
         cmd.Connection = db;
-        cmd.CommandText = "SELECT *FROM eleves"; 
-        MySqlDataReader dataReader = cmd.ExecuteReader();
+       
+    }
+
+    public void afficher()
+    {
+        cmd.CommandText = "SELECT *FROM eleves";
+        dataReader = cmd.ExecuteReader();
         while(dataReader.Read())
             Console.WriteLine(dataReader.GetInt32(0)+" " + dataReader["nom"]+"  " + dataReader["prenom"]+" " + dataReader["groupe"]);
+        dataReader.Close();
     }
-    public void supprimerEleve(int id){}
-    
-    public void ajouterEleve(Eleve eleve)
+
+    public Eleve chercherParId(int id)
     {
         
-        MySqlCommand cmd = db.CreateCommand();
-        cmd.Connection = db;
+        cmd.CommandText = "SELECT *FROM eleves WHERE id = @id";
+        cmd.Parameters.AddWithValue("@id", id); 
+        dataReader = cmd.ExecuteReader();
+        if (dataReader.Read())
+        {
+            Console.WriteLine(dataReader["nom"].GetType());
+           Eleve eleve = new Eleve(dataReader.GetString("nom"), dataReader.GetString("prenom"),
+                dataReader.GetString("groupe"));
+           dataReader.Close();
+           return eleve; 
+        }
+
+        return null; 
+    }
+
+    public void supprimer(int id)
+    {
+        if (chercherParId(id) != null)
+        {
+            cmd.CommandText = "delete from eleves where id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("eleve supprimé avec succes ");
+        }
+        else
+        {
+            Console.WriteLine("eleve n'existe pas"); 
+        }
+
+
+
+    }
+    
+    public void ajouter(Eleve eleve)
+    {
         try
         {
             cmd.CommandText = "INSERT INTO eleves (nom, prenom, groupe) VALUES (@nom, @prenom, @groupe)";
@@ -46,8 +86,7 @@ public class EleveService
 
     public static void Main(string[] args)
     {
-        EleveService eleveService = new EleveService(); 
-        eleveService.ajouterEleve(new Eleve("louah" , "mohamed","GINF2"));
-        eleveService.getAllEleves();
+        EleveService eleveService = new EleveService();
+        
     }
 }

@@ -41,7 +41,8 @@ public class Eleve
         set => groupe = value ;
     }
 
-   
-
-    
+    public override string ToString()
+    {
+        return nom + " " + prenom + " " + groupe; 
+    }
 }

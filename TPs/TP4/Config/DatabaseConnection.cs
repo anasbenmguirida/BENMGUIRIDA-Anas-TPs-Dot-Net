@@ -5,13 +5,13 @@ public class DatabaseConnection
     private static DatabaseConnection databaseConnection; 
      
     private DatabaseConnection(){}
-    private static  MySqlConnection conn; 
+    private static  MySqlConnection connection; 
     public static DatabaseConnection getInstance()
     {
         try
         {
-             conn = new MySqlConnection("User Id=root;Host=localhost;Database=ensat");
-            conn.Open();
+             connection = new MySqlConnection("User Id=root;Host=localhost;Database=ensat");
+            connection.Open();
             Console.WriteLine("heeere i connected to the database ");
             return new DatabaseConnection(); 
         }
@@ -25,6 +25,6 @@ public class DatabaseConnection
 
     public static MySqlConnection getConnection()
     {
-        return conn; 
+        return connection; 
     }
 }
